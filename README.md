@@ -1,2 +1,4 @@
 # FedAvg
-federated learning
+A toy example of federated learning
+
+
