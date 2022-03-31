@@ -6,6 +6,7 @@ from fedavg.server import Server
 from fedavg.client import Client
 from fedavg.datasets import MyTabularDataset
 from fedavg.models import MLP
+import copy
 
 def get_tabular_data():
     """
@@ -77,7 +78,7 @@ if __name__ == '__main__':
         for key in clients.keys():
             print('training {}...'.format(key))
             model_k = clients[key].local_train(server.global_model)
-            clients_models[key] = model_k
+            clients_models[key] = copy.deepcopy(model_k)
 
         #联邦聚合
         server.model_aggregate(clients_models, client_weight)

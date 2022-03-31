@@ -48,6 +48,7 @@ class Client(object):
 
         return self.local_model.state_dict()
 
+    @torch.no_grad()
     def model_eval(self):
         self.local_model.eval()
 

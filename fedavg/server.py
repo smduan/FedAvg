@@ -25,6 +25,7 @@ class Server(object):
 
         self.global_model.load_state_dict(new_model)
 
+    @torch.no_grad()
     def model_eval(self):
         self.global_model.eval()
 
